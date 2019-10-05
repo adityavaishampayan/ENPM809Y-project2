@@ -21,11 +21,12 @@ int ReadFile(std::string fileName){
 	unsigned int line_count=30;
 	unsigned int col=0;
 	unsigned int row=0;
-	
+
+
 	for(row=0; row<line_count; row++){
 		for(col=0; col<col_total; col++){
 			maze.at(col).at(row).push_back(fgetc(pFile));
-		}
+		}fgetc(pFile);
 	}
 			
 	std::cout<<"Here is the maze:"<<"\n";
