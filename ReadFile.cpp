@@ -10,10 +10,10 @@ std::vector<std::vector<std::string>> maze(45, std::vector<std::string>(30));
 
 //https://thispointer.com/c-how-to-read-a-file-line-by-line-into-a-vector/
 
-int ReadFile(std::string fileName){
+int ReadFile(const char* fileName){
 // Open the File
 	FILE* pFile;
-	pFile=fopen("the_maze.txt","r");
+	pFile=fopen(fileName,"r");
 	if (pFile==NULL) perror ("Error opening file");
 
 
