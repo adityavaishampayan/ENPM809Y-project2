@@ -3,11 +3,14 @@
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
+/**
+ * The <code>ReadFile</code> function takes in a file path as a string (ex: "the_maze.txt").
+ * It opens that text file and reads it, character by character, into a 2D vector (maze)
+ */
+int ReadFile(const char* fileName);
 
 std::vector<std::vector<std::string>> maze(45, std::vector<std::string>(32));
 
-
-//https://thispointer.com/c-how-to-read-a-file-line-by-line-into-a-vector/
 
 int ReadFile(const char* fileName){
 // Open the File
