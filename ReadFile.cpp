@@ -4,13 +4,20 @@
 #include <fstream>
 #include <stdio.h>
 
+using std::cout;
+using std::vector;
+using std::cin;
+using std::endl;
+using std::vector;
+using std::string;
+
 /**
  * The <code>ReadFile</code> function takes in a file path as a string (ex: "the_maze.txt").
  * It opens that text file and reads it, character by character, into a 2D vector (maze)
  */
 int ReadFile(const char* fileName);
 
-std::vector<std::vector<std::string>> maze(45, std::vector<std::string>(32));
+vector<vector<string>> maze(45, vector<string>(32));
 
 
 //https://thispointer.com/c-how-to-read-a-file-line-by-line-into-a-vector/
@@ -34,13 +41,13 @@ int ReadFile(const char* fileName){
 		}fgetc(pFile);
 	}	
 	
-	std::cout<<"Here is the maze:"<<"\n";
+	cout<<"Here is the maze:"<<"\n";
 		for(row=0; row<=line_count; row++){
 			for(col=0; col<col_total; col++){
-				std::cout<<maze.at(col).at(row);
+				cout<<maze.at(col).at(row);
 			}
 		}
-	std::cout<<"\n";
+	cout<<"\n";
 
 	
 	//Close The File
@@ -55,14 +62,14 @@ int FindPath(int Start_x,int Goal_x,int Start_y, int Goal_y)
     
 	if ((Start_x>45 || Start_y>30) || (Goal_x>45 || Goal_y>30) )
     {
-     std::cout<<"Co-ordinates are outside of the maze"<<std::endl;
+     cout<<"Co-ordinates are outside of the maze"<<endl;
     }
     if (Start_x==Goal_x && Start_y==Goal_y)
     {
-     std::cout<<"Start and Goal positions are same"<<std::endl;
+     cout<<"Start and Goal positions are same"<<endl;
     }
     if((maze.at(Start_x).at(Start_y).compare("#")==0) || (maze.at(Goal_x).at(Goal_y).compare("#")==0))
-     std::cout<<"Position entered is obstacle"<<std::endl;
+     cout<<"Position entered is obstacle"<<endl;
     return 0;
 }
 
@@ -83,14 +90,22 @@ int CheckPath(int Pos_x,int Pos_y)
     return 0;
 }
 
-
-
 int main()
 {
-	ReadFile("the_maze.txt");
+	ReadFile("/home/aditya/Desktop/809Y/ENPM809Y-project2/maze.txt");
     int Start_x,Goal_x,Start_y, Goal_y, Pos_x, Pos_y;
-    std::cout<<"Enter the start and goal position: "<<std::endl;
-    std::cin>>Start_x>>Start_y>>Goal_x>>Goal_y;
+    cout<<"enter start position x coordinate: ";
+    cin>>Start_x;
+    
+    cout<<"\n enter start position y coordinate: ";
+    cin>>Start_y;
+    
+    cout<<"\n enter goal position x coordinate: ";
+    cin>>Goal_x;
+    
+    cout<<"\n enter goal position y coordinate: ";
+    cin>>Goal_y;
+    
     FindPath(Start_x,Start_y,Goal_x,Goal_y);
 	CheckObstacle(Pos_x,Pos_y);
     CheckPath(Pos_x,Pos_y);
