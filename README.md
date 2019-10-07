@@ -9,4 +9,5 @@ $gcc -Wall -Wextra main.cpp
 
 
 **Running Instructions:**
+
 The "maze.txt" file must be in the same directory...
