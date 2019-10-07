@@ -50,13 +50,50 @@ int ReadFile(const char* fileName){
 }
 
 
+int FindPath(int Start_x,int Goal_x,int Start_y, int Goal_y)
+{
+    
+	if ((Start_x>45 || Start_y>30) || (Goal_x>45 || Goal_y>30) )
+    {
+     std::cout<<"Co-ordinates are outside of the maze"<<std::endl;
+    }
+    if (Start_x==Goal_x && Start_y==Goal_y)
+    {
+     std::cout<<"Start and Goal positions are same"<<std::endl;
+    }
+    if((maze.at(Start_x).at(Start_y).compare("#")==0) || (maze.at(Goal_x).at(Goal_y).compare("#")==0))
+     std::cout<<"Position entered is obstacle"<<std::endl;
+    return 0;
+}
 
-
+int CheckObstacle(int Pos_x,int Pos_y)
+{
+    bool position;
+   if(maze.at(Pos_x).at(Pos_y).compare("#")== 0){ 
+    position=false;   
+   }return 0;
+}
  
+int CheckPath(int Pos_x,int Pos_y)
+{
+    bool position;
+   if(maze.at(Pos_x).at(Pos_y).compare(" ")== 0){ 
+    position= true;
+   }  
+    return 0;
+}
+
+
+
 int main()
 {
 	ReadFile("the_maze.txt");
-
+    int Start_x,Goal_x,Start_y, Goal_y, Pos_x, Pos_y;
+    std::cout<<"Enter the start and goal position: "<<std::endl;
+    std::cin>>Start_x>>Start_y>>Goal_x>>Goal_y;
+    FindPath(Start_x,Start_y,Goal_x,Goal_y);
+	CheckObstacle(Pos_x,Pos_y);
+    CheckPath(Pos_x,Pos_y);
 
 return 0;
 }
