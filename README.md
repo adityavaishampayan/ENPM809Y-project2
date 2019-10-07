@@ -1,5 +1,5 @@
 # ENPM809Y-project2
-Find path in a maze
+Find path in a maze. The (0,0) position is defined as the first character in the maze (upper left).
 
 **Compiling Instructions:**
 
