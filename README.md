@@ -2,7 +2,7 @@
 Find path in a maze
 
 **Compiling Instructions:**
-Compile the program with \n
+Compile the program with
 
 $gcc -Wall -Wextra main.cpp
 
