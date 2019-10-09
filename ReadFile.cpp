@@ -17,7 +17,7 @@ using std::string;
  */
 int ReadFile(const char* fileName);
 
-unsigned int col_total=8;
+unsigned int col_total=6;
 unsigned int line_count=6;
 vector<vector<string>> maze(col_total+1, vector<string>(line_count+1));
 
@@ -38,14 +38,15 @@ int ReadFile(const char* fileName){
 
 
 	for(row=0; row<=line_count; row++){
-		for(col=0; col<col_total; col++){
+		for(col=0; col<=col_total; col++){
 			maze.at(col).at(row)=fgetc(pFile);
-		}fgetc(pFile);
+		}//fgetc(pFile);
 	}	
 	
 	cout<<"Here is the maze:"<<"\n";
 		for(row=0; row<=line_count; row++){
-			for(col=0; col<col_total; col++){
+			for(col=0; col<=col_total; col++){
+				//cout<<" r"<<row<<"c"<<col<<" ";
 				cout<<maze.at(col).at(row);
 			}
 		}
