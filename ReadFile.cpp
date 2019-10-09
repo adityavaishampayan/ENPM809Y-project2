@@ -17,7 +17,11 @@ using std::string;
  */
 int ReadFile(const char* fileName);
 
-vector<vector<string>> maze(45, vector<string>(32));
+unsigned int col_total=8;
+unsigned int line_count=6;
+vector<vector<string>> maze(col_total+1, vector<string>(line_count+1));
+
+
 
 
 //https://thispointer.com/c-how-to-read-a-file-line-by-line-into-a-vector/
@@ -29,8 +33,6 @@ int ReadFile(const char* fileName){
 	if (pFile==NULL) perror ("Error opening file");
 
 
-    unsigned int col_total=45;
-	unsigned int line_count=31;
 	unsigned int col=0;
 	unsigned int row=0;
 
@@ -60,7 +62,7 @@ int ReadFile(const char* fileName){
 int FindPath(int Start_x,int Goal_x,int Start_y, int Goal_y)
 {
     
-	if ((Start_x>45 || Start_y>30) || (Goal_x>45 || Goal_y>30) )
+	if ((Start_x>col_total || Start_y>line_count) || (Goal_x>col_total || Goal_y>line_count) )
     {
      cout<<"Co-ordinates are outside of the maze"<<endl;
     }
@@ -92,7 +94,7 @@ int CheckPath(int Pos_x,int Pos_y)
 
 int main()
 {
-	ReadFile("/home/aditya/Desktop/809Y/ENPM809Y-project2/maze.txt");
+	ReadFile("the_maze2.txt");
     int Start_x,Goal_x,Start_y, Goal_y, Pos_x, Pos_y;
     cout<<"enter start position x coordinate: ";
     cin>>Start_x;
