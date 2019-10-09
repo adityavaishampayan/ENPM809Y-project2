@@ -6,13 +6,14 @@ Find path in a maze.
 # Compiling Instructions:
 Compile the program with:
 ```
-gcc -Wall -Wextra main.cpp
+gcc -Wall -Wextra ReadFile.cpp
 ```
 
 # Running Instructions:
 
 The "maze.txt" file must be in the same directory...
 
+You may need to edit the ReadFile.cpp file before compliing to change the maze.txt path file. 
 
 # Info on Program
 
